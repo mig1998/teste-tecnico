@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%- title %>
+  </title>
+
+
+  <%- include('elements/bootstrap'); %>
+   
+  <style>
+    form{
+      background:rgba(128, 128, 128, 0.198);
+    }
+
+  </style>
+
+
+
+  </head>
+
+<body>
+
+  <header>
+    <%- include('elements/head'); %>
+  </header>
+
+  <h2 class="text-center mt-5">Cadastro</h2>
+
+  <!-- cadastro de usuario -->
+  <form class="w-50 ml-auto mr-auto mt-3 text-dark text-center" method="get" action="/cadastrar">
+    <div class="">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="coloque seu email" name="email">
+    </div>
+    <div class="">
+      <label for="nome">Nome</label>
+      <input type="text" placeholder="coloque seu nome" id="nome" name="nome">
+    </div>
+
+    <button type="submit" class="btn btn-primary m-3" onclick="check()">Cadastrar</button>
+  </form>
+
+
+  <%- include('elements/bootstrapscript') %>
+
+
+
+
+
+
+    <footer>
+      <%- include('elements/footer') %>
+    </footer>
+
+
+    <script>
+      function check() {
+        nome = document.getElementById('nome').value
+        email = document.getElementById('email').value
+
+        let reg = /^[\w.\+]+@\w+.\w{2,}(?:.\w{2})?$/;
+        if (nome == "" || email == "") {
+          alert("você deixou algum campo vazio!")
+        } else if (reg.test(email)) {
+          alert("Cadastrado com Sucesso!")
+        } else {
+          alert("Email inválido");
+        }
+      }
+    </script>
+</body>
+
+</html>

@@ -11,8 +11,9 @@ var id_usuario = "";
 
 
 
-
-
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Inicio' });
+});
 
 
 axios.post('http://138.68.7.94:85/busca_comentarios', {})
@@ -62,7 +63,7 @@ router.get('/cadastrar', function (req, res, next) {
       res.send(error, 'Falha no Cadastro, você deixou algum campo')
     });
 
-  res.render('index', { title: 'Cadastrar' });
+  res.render('cadastrar', { title: 'Cadastrar' });
 
 });
 
