@@ -8,7 +8,7 @@
 
 
   <%- include('elements/bootstrap'); %>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -20,24 +20,25 @@
 
 
   <!-- cadastro de usuario -->
-  <form class="w-50 m-auto bg-secondary text-white text-center">
+  <form class="w-50 m-auto bg-secondary text-white text-center" method="get" action="/cadastrar">
     <div class="">
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="coloque seu email">
+      <input type="email" id="email" placeholder="coloque seu email" name="email">
     </div>
     <div class="">
       <label for="nome">Nome</label>
-      <input type="password" placeholder="coloque seu nome" id="nome">
+      <input type="text" placeholder="coloque seu nome" id="nome" name="nome">
     </div>
 
 
-    <p lass="btn btn-primary mt-3" onclick="cad_User()">Cadastrar</p>
+    <p lass="btn btn-primary mt-3">Cadastrar</p>
+    <button type="submit" class="btn btn-primary" onclick="check()">Cadastrar</button>
   </form>
 
 
-
-
   <%- include('elements/bootstrapscript') %>
+
+
 
 
 
@@ -46,28 +47,22 @@
       <%- include('elements/footer') %>
     </footer>
 
-    <script type="module" src="script/caduser.js">
 
-      import api from "../../services/api";
+    <script>
+      function check() {
+        nome = document.getElementById('nome').value
+        email = document.getElementById('email').value
 
-
-      api.post('http://138.68.7.94:85/cadastro', {
-        nome: "email",
-        email: "email@email.com"
-      })
-        .then(res => {
-          console.log(`statusCode: ${res.status}`);
-          console.log(res);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-
-
+        let reg = /^[\w.\+]+@\w+.\w{2,}(?:.\w{2})?$/;
+        if (nome == "" || email == "") {
+          alert("você deixou algum campo vazio!")
+        } else if (reg.test(email)) {
+          alert("Cadastrado com Sucesso!")
+        } else {
+          alert("Email inválido");
+        }
+      }
     </script>
-
-
-
 </body>
 
 </html>

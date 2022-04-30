@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const user = require('../public/script/caduser')
+
 
 
 
@@ -8,8 +8,8 @@ const user = require('../public/script/caduser')
 
 
 //  axios.post('http://138.68.7.94:85/cadastro', {
-//    nome:user.nome,
-//    email:user.email
+//    nome:"miguel",
+//    email:"miguel@miguel.com"
 //   })
 //   .then(res => {
 //     console.log(`statusCode: ${res.status}`);
@@ -34,11 +34,6 @@ const user = require('../public/script/caduser')
   //   console.error(error);
   // });
 
-  const api = axios.create({
-    baseURL: "http://138.68.7.94:85",
-  });
 
 
-
-
-module.exports = api
+module.exports = axios
