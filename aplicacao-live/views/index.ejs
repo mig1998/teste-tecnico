@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%- title %>
+  </title>
+
+
+  <%- include('elements/bootstrap'); %>
+
+</head>
+
+<body>
+
+  <header>
+    <%- include('elements/head'); %>
+  </header>
+
+
+
+  <!-- cadastro de usuario -->
+  <form class="w-50 m-auto bg-secondary text-white text-center">
+    <div class="">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="coloque seu email">
+    </div>
+    <div class="">
+      <label for="nome">Nome</label>
+      <input type="password" placeholder="coloque seu nome" id="nome">
+    </div>
+
+
+    <p lass="btn btn-primary mt-3" onclick="cad_User()">Cadastrar</p>
+  </form>
+
+
+
+
+  <%- include('elements/bootstrapscript') %>
+
+
+
+
+    <footer>
+      <%- include('elements/footer') %>
+    </footer>
+
+    <script type="module" src="script/caduser.js">
+
+      import api from "../../services/api";
+
+
+      api.post('http://138.68.7.94:85/cadastro', {
+        nome: "email",
+        email: "email@email.com"
+      })
+        .then(res => {
+          console.log(`statusCode: ${res.status}`);
+          console.log(res);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

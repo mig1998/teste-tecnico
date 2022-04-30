@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%- title %>
+  </title>
+
+
+  <%- include('elements/bootstrap'); %>
+
+
+</head>
+
+
+<header>
+  <%- include('elements/head') %>
+</header>
+
+<form class="w-50 m-auto bg-secondary text-white text-center">
+
+  <div class="">
+    <label for="comentario">Comentario:</label>
+    <textarea style=" display: block; margin: auto; height: 10em; resize: none;"  cols="40"  maxlength="250" size="250" type="text"  placeholder="coloque um comentario" id="comentario"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+</form>
+
+
+</body>
+
+
+
+<footer>
+  <%- include('elements/footer') %>
+</footer>
+
+
+</html>
+

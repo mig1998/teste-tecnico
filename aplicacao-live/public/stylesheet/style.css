@@ -1,0 +1,17 @@
+form{
+    border-radius: 1em;
+}
+
+
+form input{
+    display: block;
+    height: 3em;
+    width: 70%;
+    margin: auto;
+    border-radius: 1em;
+    border: none;
+}
+
+form div{
+    margin-top: 2%;
+}
