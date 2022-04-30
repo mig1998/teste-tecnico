@@ -1,0 +1,41 @@
+    <style>
+        ul{
+            list-style: none;
+        }
+
+        ul li{
+            text-align: center;
+        }
+
+
+        hr{
+            width: 50%;
+        }
+    
+        #caixa{
+            overflow-y: scroll;     
+            height:14em;
+            border: 1px solid black;
+            width: 50%;
+            margin: 5% auto;
+            text-align: center;
+            background-color: rgb(240, 243, 195);
+            border-radius: 2em;
+            color: black;
+        }
+    </style>
+
+
+<ul id="caixa">
+    <h5>Comentários</h5>
+    <% comentarios.slice(-100).forEach(function(comentario) { %>
+        <hr>
+        <li> Comentario:<%= comentario.comentario %></li>
+        <li> Data:<%= comentario.data_entrada %></li>
+        <li>Horario:<%= comentario.horario %></li>
+        <li>Nome:<%= comentario.nome %></li>
+        <li>Email:<%= comentario.email %></li>
+        <br>
+        <hr>
+        <% }); %>
+</ul>

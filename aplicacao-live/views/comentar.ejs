@@ -29,18 +29,30 @@
 </form>
 
 
+<!-- coments -->
+<div> 
+  <%- include('coments') %>
+</div>
+
+
 </body>
 
 
 <script>
+  var id= "<%- id %>"
+
 function check(){
+  window.location.reload();
   var comentario=document.getElementById('comentario').value
 
 
-if(comentario == ""){
+  if(id==""){
+    alert("cadastra-se primeiro!")
+  }else if(comentario == ""){
   alert("você deixou o campo comentário vazio!")
 }else{
   alert("comentário salvo com sucesso!")
+  window.location.reload();
 }
 }
 
