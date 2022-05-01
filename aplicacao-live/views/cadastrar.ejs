@@ -29,7 +29,7 @@
   <h2 class="text-center mt-5">Cadastro</h2>
 
   <!-- cadastro de usuario -->
-  <form class="w-50 ml-auto mr-auto mt-3 text-dark text-center" method="get" action="/cadastrar">
+  <form class="w-50 ml-auto mr-auto mt-3 text-dark text-center" method="post" action="/cadastrar">
     <div class="">
       <label for="email">Email</label>
       <input type="email" id="email" placeholder="coloque seu email" name="email">
@@ -56,6 +56,7 @@
 
 
     <script>
+      // verificação se campos estão vazios e se o email é valido
       function check() {
         nome = document.getElementById('nome').value
         email = document.getElementById('email').value
